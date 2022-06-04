@@ -2,8 +2,10 @@ defmodule CoffeeChat.ChatRooms.ChatRoom do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias CoffeeChat.ChatServers.ChatServer
-  alias CoffeeChat.ChatMessages.ChatMessage
+  alias CoffeeChat.{
+    ChatServers.ChatServer,
+    ChatMessages.ChatMessage
+  }
 
   @fields [
     :chat_room_name,
@@ -11,14 +13,14 @@ defmodule CoffeeChat.ChatRooms.ChatRoom do
     :chat_room_type
   ]
 
-  @primary_key {:chat_room_id, :binary_id, autogenerate: true}
   schema "chat_rooms" do
     field(:chat_room_name, :string)
     field(:chat_room_description, :string)
     field(:chat_room_type, :string)
-    has_many(:chat_messages, ChatMessage, foreign_key: :chat_room_id)
 
-    belongs_to(:chat_server_id, ChatServer, type: :binary_id, foreign_key: :chat_server_id)
+    belongs_to(:chat_server, ChatServer)
+
+    has_many(:chat_messages, ChatMessage)
 
     timestamps()
   end

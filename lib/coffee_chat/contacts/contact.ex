@@ -1,4 +1,9 @@
 defmodule CoffeeChat.Contacts.Contact do
+  @moduledoc """
+  Acts as a mapping table so we can keep track of all the
+  other users an individual user adds as a contact.
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -8,11 +13,10 @@ defmodule CoffeeChat.Contacts.Contact do
     :contact_id
   ]
 
-  @primary_key false
   schema "contacts" do
-    field(:contact_id, :binary_id)
+    belongs_to(:user, User)
 
-    belongs_to(:user_id, User, type: :binary_id, foreign_key: :user_id)
+    field(:contact_id, :bigserial)
 
     timestamps()
   end
