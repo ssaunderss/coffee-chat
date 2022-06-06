@@ -1,10 +1,10 @@
-defmodule CoffeeChat.Users.User do
+defmodule CoffeeChat.User do
   use Ecto.Schema
   import Ecto.Changeset
 
   alias CoffeeChat.{
-    Contacts.Contact,
-    ChatServerMemberships.ChatServerMembership
+    Contact,
+    ChatServerMembership
   }
 
   @fields [

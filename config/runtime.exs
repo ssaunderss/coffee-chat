@@ -69,7 +69,7 @@ database_db =
   System.get_env("COCKROACH_DATABASE") ||
     raise """
     environment variable COCKROACH_DATABASE is missing.
-    For example: coffee-chat
+    For example: coffee-chat-9810.defaultdb
     """
 
 database_port =

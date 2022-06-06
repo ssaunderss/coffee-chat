@@ -35,6 +35,14 @@ If you don't want to sign up for the hosted serverless option, you can edit the 
 _(Note: using a Docker cluster is insecure and *should not* be deployed. If you need to deploy, reconsider the hosted option, or you can check out the manual deployment option for your preferred cloud provider/on-prem https://www.cockroachlabs.com/docs/stable/manual-deployment.html)_
 
 
+## TODOs
+- [x] Write migration files
+- [ ] Write boilerplate queries
+  - [ ] tighten up changesets for users
+- [ ] Write tests for backend
+- [ ] Start working on front end / liveviews (use Phoenix PubSub for liveview updates)
+- [ ] Shift focus to work on end to end encryption
+
 ### Phoenix
 
 To start your Phoenix server:
