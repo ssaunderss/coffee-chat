@@ -1,0 +1,19 @@
+version: "3.6"
+
+services:
+  coffee_chat_dev:
+    build:
+      context: ../
+      dockerfile: .devcontainer/Dockerfile
+    environment:
+      MIX_ENV: dev
+      COCKROACH_USERNAME: ${COCKROACH_USERNAME}
+      COCKROACH_PASSWORD: ${COCKROACH_PASSWORD}
+      COCKROACH_HOSTNAME: ${COCKROACH_HOSTNAME}
+      COCKROACH_DATABASE: ${COCKROACH_DATABASE}
+      COCKROACH_PORT: ${COCKROACH_PORT}
+      COCKROACH_CA_CERT_PATH: ${COCKROACH_CA_CERT_PATH}
+      COCKROACH_CLUSTER: ${COCKROACH_CLUSTER}
+    volumes:
+      - ../:/workspace/coffee-chat
+    command: bash -c "sleep infinity"

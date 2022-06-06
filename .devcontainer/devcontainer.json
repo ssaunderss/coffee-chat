@@ -1,0 +1,13 @@
+{
+    "name": "coffee-chat-devcontainer",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "workspaceFolder": "/workspace/coffee-chat",
+    "service": "coffee_chat_dev",
+    "extensions": [
+      "jakebecker.elixir-ls",
+      "eamodio.gitlens",
+      "streetsidesoftware.code-spell-checker"
+    ],
+    "onCreateCommand": "elixir --version",
+    "forwardPorts": [4000]
+  }
